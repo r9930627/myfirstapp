@@ -1,7 +1,33 @@
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  var appTitle = Text('我的第一個Flutter app'),
+      hiFlutter = Text(
+        'hi,flutter.今天是20220926',
+        style: TextStyle(fontSize:50,decoration:TextDecoration.underline,color:Colors.redAccent)
+      );
+
+  var img = Image.network("https://imgur.dcard.tw/kDFEucJ.jpg");
+
+  var appBody = Center(
+    child: img,
+  );
+
+  var appBar = AppBar(
+    title: appTitle,
+    backgroundColor:Colors.blue,
+  );
+
+  var app = MaterialApp(
+    home: Scaffold(
+      appBar: appBar,
+      body: appBody,
+      backgroundColor: Colors.yellow,
+    ),
+  );
+
+  runApp(app);
 }
 
 class MyApp extends StatelessWidget {
